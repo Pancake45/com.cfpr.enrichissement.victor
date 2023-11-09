@@ -11,7 +11,21 @@ public class Probleme4 {
 
 	public static void main(String[] args) {
 		
-		prendreInfo();
+		do {
+			
+			try {
+				prendreInfo();	
+			} catch (Exception e) {
+				message("Erreur : Veuillez reessayer ");
+				KEYBOARD.next();
+			}
+			
+			if (MAX >= 1 || MIN >=1) {
+				break;
+			}
+			
+		} while (true);
+		
 		calcule(REPONSE);
 		fin();
 	}
