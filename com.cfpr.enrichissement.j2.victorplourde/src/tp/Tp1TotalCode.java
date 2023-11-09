@@ -44,14 +44,19 @@ public class Tp1TotalCode {
 	//Money Program
 	//
 	public static void moneyLauncher(Scanner KEYBOARD) {
-		Scanner keyboard = new Scanner(System.in);
+
 		boolean playagain;
 		
 		do {
-            moneyGame(keyboard);
+			try {
+				moneyGame(KEYBOARD);
+			} catch (Exception e) {
+				afficherMessage("Erreur : Veuillez ressayer avec un nombre valide.");
+				KEYBOARD.next();
+			}
 
             afficherMessage("Voulez-vous recommencer le programme ? (Oui/Non)");
-            String response = keyboard.next().toLowerCase();
+            String response = KEYBOARD.next().toLowerCase();
             playagain = response.equals("oui");
 
         } while (playagain);
@@ -129,7 +134,7 @@ public class Tp1TotalCode {
 				
 			count++;
 			
-		} while (USERINPUT != RESULT && count < 7);
+		} while (USERINPUT != RESULT && count < 6);
 	 
 		if (USERINPUT == RESULT) {
 			afficherMessage("Bravo! Vous avez trouvez le nombre " + RESULT + "!!");
