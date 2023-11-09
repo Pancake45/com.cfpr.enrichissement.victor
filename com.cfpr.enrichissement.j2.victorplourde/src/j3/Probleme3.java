@@ -11,20 +11,20 @@ public class Probleme3 {
 
 	public static void main(String[] args) {
 		
-		prendreInfo(null);
-		
-		afficherFin(null);
+		prendreInfo();
+		calculerFactorielle();
+		afficherFin();
 	}
 
-	public static void prendreInfo(String info) {
+	public static void prendreInfo() {
 		message("Veuillez entrer le nombre que vous voulez avoir le factorielle : ");
 		USERINPUT = KEYBOARD.nextInt();
 		
 	}
 	
-	public static BigInteger calculerFactorielle(int factorielle) {
+	public static BigInteger calculerFactorielle() {
 		
-		for (int i = 1; i <= factorielle; i++) {
+		for (int i = 1; i <= USERINPUT; i++) {
 			RESULT = RESULT.multiply(BigInteger.valueOf(i));
 
 		}
@@ -32,7 +32,7 @@ public class Probleme3 {
 		return RESULT;
 	}
 	
-	public static void afficherFin(String fin) {
+	public static void afficherFin() {
 		
 		message("Le resultat est : " + RESULT);
 	}
