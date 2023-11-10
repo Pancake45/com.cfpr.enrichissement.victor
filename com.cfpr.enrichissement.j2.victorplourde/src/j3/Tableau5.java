@@ -15,7 +15,6 @@ public class Tableau5 {
 	public static void main(String[] args) {
 		
 		putRandomNumber();
-		exchangeTblValue();
 		putDataTbl2();
 		printTbl();
 	}
@@ -45,11 +44,6 @@ public class Tableau5 {
 		//TBL2[2] = TBL[7];
 		//TBL2[1] = TBL[8];
 		//TBL2[0] = TBL[9];
-	}
-	
-	public static void exchangeTblValue() {
-		
-		
 	}
 	
 	public static void printTbl() {
