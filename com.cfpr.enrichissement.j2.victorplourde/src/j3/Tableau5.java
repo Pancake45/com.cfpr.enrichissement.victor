@@ -30,16 +30,21 @@ public class Tableau5 {
 	}
 	
 	public static void putDataTbl2() {
-		TBL2[9] = TBL[0];
-		TBL2[8] = TBL[1];
-		TBL2[7] = TBL[2];
-		TBL2[6] = TBL[3];
-		TBL2[5] = TBL[4];
-		TBL2[4] = TBL[5];
-		TBL2[3] = TBL[6];
-		TBL2[2] = TBL[7];
-		TBL2[1] = TBL[8];
-		TBL2[0] = TBL[9];
+		for (int i = 0; i < TBL.length; i++)
+		{
+			TBL2[TBL2.length -1 -i] = TBL[i];
+		}
+		
+		//TBL2[9] = TBL[0];
+		//TBL2[8] = TBL[1];
+		//TBL2[7] = TBL[2];
+		//TBL2[6] = TBL[3];
+		//TBL2[5] = TBL[4];
+		//TBL2[4] = TBL[5];
+		//TBL2[3] = TBL[6];
+		//TBL2[2] = TBL[7];
+		//TBL2[1] = TBL[8];
+		//TBL2[0] = TBL[9];
 	}
 	
 	public static void exchangeTblValue() {
