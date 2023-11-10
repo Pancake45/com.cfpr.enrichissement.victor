@@ -1,72 +1,47 @@
 package j3;
 
-import java.util.Random;
-
 public class Tableau4 {
-
-	public static int[] tbl = new int[5];
-	public static final Random NUMERO = new Random();
-	public static final int LOW = 1;
-	public static final int HIGH = 100;
-	public static int RESULT = NUMERO.nextInt(HIGH-LOW) + LOW;
-	public static int MAX = 0;
-	public static int MIN = Integer.MAX_VALUE;
-	public static int POSITION = 0;
 	
+	public static int[] tableau = new int[5];
+	public static int max = 0;
+	public static int min = 102;
+	public static int maxPos = 0;
+	public static int minPos = 0;
 	public static void main(String[] args) {
-		insertRandomNumberArray(tbl);
-		
-		if (POSITION != -1) {
-			  System.out.println("The value " + tbl + " is found at position " + POSITION);
-			} else {
-			  System.out.println("The value " + tbl + " is not present in the array");
-			}
-	}
-	public static int[] insertRandomNumberArray(int[] array) {
-		
-		for (int i = 0; i < tbl.length; i++) {
-			RESULT = NUMERO.nextInt(HIGH-LOW) + LOW;
-			tbl[i] = RESULT;
-			
-			if (tbl[i] > MAX) {
-				MAX = RESULT;
-			}
-			if (tbl[i] < MIN) {
-				MIN = RESULT;
-			}
-			message(RESULT);
-		}
-		message("\nMin : " + MIN );
-		message("Max : " + MAX);
-		
-		for (int i = 0; i > tbl.length; i++) {
-			if (tbl[i] == MAX) {
-				POSITION = i;
-			}
-		}
-		message("La position MAX est : " + POSITION);
-		
-		int[] returntbl = {MAX,MIN};
-		return	returntbl;
+		ajouterNombre();
+		plusGrandPlusPetit();
+		print("le nombre le plus gros est " + max + ", position " + maxPos + " dans le tableau.");
+		print("le nombre le plus petit est " + min + ", position " + minPos + " dans le tableau.");
 	}
 	
-	public static int finfingPosition(int target) {
-		for (int i = 0; i < tbl.length; i++) {
-		    if (tbl[i] == target) {
-		      return i; // Return the index of the target value
-		    }
-		  }
-
-		  return -1; // Value not found
+	public static void print(String message) {
+		System.out.println(message);
 	}
 	
-	public static void message(double tbl) {
-		
-		System.out.println(tbl);
+	public static double nombreAleatoire() {
+		return Math.random() * (100 - 0) + 0;
 	}
+	
+	public static void ajouterNombre() {
+		for (int i = 0; i < tableau.length; i++) {
+			tableau[i] = (int) nombreAleatoire();
+		}
 		
-	public static void message(String string) {
-		
-		System.out.println(string);
 	}
+	
+	public static void plusGrandPlusPetit() {
+		for (int i = 1; i < tableau.length; i++) {
+			if(tableau[i] > max) {
+				max = tableau[i];
+				maxPos = i;
+			}
+			if(tableau[i] < min) {
+				min = tableau[i];
+				minPos = i;
+			}
+		}
+	}
+	
+	
+	
 }

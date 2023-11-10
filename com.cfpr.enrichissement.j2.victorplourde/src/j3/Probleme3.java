@@ -26,7 +26,6 @@ public class Probleme3 {
 		
 		for (int i = 1; i <= USERINPUT; i++) {
 			RESULT = RESULT.multiply(BigInteger.valueOf(i));
-
 		}
 		
 		return RESULT;

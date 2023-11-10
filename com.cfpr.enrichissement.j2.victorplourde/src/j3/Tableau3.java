@@ -1,6 +1,7 @@
 package j3;
 
 import java.util.Random;
+import java.util.Arrays;
 
 public class Tableau3 {
 
@@ -23,7 +24,6 @@ public class Tableau3 {
 		for (int i = 0; i < TBL1.length; i++) {
 			RESULT = NUMERO.nextInt(HIGH-LOW) + LOW;
 			TBL1[i] = RESULT;
-			messageI(i +" "+ RESULT);
 		}
 		
 
@@ -31,18 +31,14 @@ public class Tableau3 {
 	
     static void reverse(int a[], int n) 
     { 
-        int[] b = new int[n]; 
-        int j = n; 
-        for (int i = 0; i < n; i++) { 
-            b[j - 1] = a[i]; 
-            j = j - 1; 
-        } 
-  
-        // printing the reversed array 
-        System.out.println("\n"); 
-        for (int k = 0; k < n; k++) { 
-            System.out.println(b[k]); 
-        } 
+    	for (int i = 0; i < TBL1.length; i++) {
+			int tmp = TBL1[i];
+			TBL2[i] = TBL1[TBL2.length-i-1];
+			TBL2[TBL2.length-i-1] = tmp;
+			
+		}
+    	messageI("Tableau1 avant l'inversion: " + Arrays.toString(TBL1));
+		messageI("Tableau2 apres l'inversion: " + Arrays.toString(TBL2));
     } 
 
 	public static void messageS(double tbl) {
