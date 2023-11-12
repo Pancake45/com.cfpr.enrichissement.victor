@@ -16,6 +16,14 @@ public class Tableau8 {
 	public static float RESULT_MOY_TP1 = 0;
 	public static float RESULT_MOY_TP2 = 0;
 	public static float RESULT_MOY_EXAM = 0;
+	public static float AVERAGE_PIERRE = 0;
+	public static float AVERAGE_ANDRE = 0;
+	public static float AVERAGE_JULIE = 0;
+	public static float AVERAGE_BRIGITTE = 0;
+	public static float AVERAGE_ANNE = 0;
+	public static float AVERAGE_OLIVIER = 0;
+	public static float AVERAGE_SIMON = 0;
+	public static float AVERAGE_NADINE = 0;
 	
 	public static void main(String[] args) {
 		getDataTBL();
@@ -29,6 +37,7 @@ public class Tableau8 {
 					knowInfo();
 					knowStudent();
 					moyeEval();
+					moyÉtu();
 					printTBL();
 					message("Voulez vous quitter ? ");
 					QUIT = KEYBOARD.nextLine();
@@ -41,6 +50,7 @@ public class Tableau8 {
 				System.exit(0);
 			}else if (CHOICE.toLowerCase().equals("non")) {
 				moyeEval();
+				moyÉtu();
 				printTBL();
 				message("Voulez vous quitter ? ");
 				QUIT = KEYBOARD.nextLine();
@@ -196,11 +206,19 @@ public class Tableau8 {
 	}
 	
 	public static void moyÉtu() {
-		int 
+		int student0 = 0;
+		int student1 = 1;
+		int student2 = 2;
+		int student3 = 3;
+		int student4 = 4;
+		int student5 = 5;
+		int student6 = 6;
+		int student7 = 7;
 		
 		for (int i = 0; i < TBL[0].length; i++) {
-			
+			AVERAGE_PIERRE += TBL[student0][i];
 		}
+		message(AVERAGE_PIERRE);
 	}
 	
 	public static void printTBL() {
@@ -214,8 +232,11 @@ public class Tableau8 {
 		
 	}
 	
-	public static void message(String string) {
-		System.out.println(string);
+	public static void message(float aVERAGE_PIERRE2) {
+		System.out.println(aVERAGE_PIERRE2);
+	}
+	public static void message(String aVERAGE_PIERRE2) {
+		System.out.println(aVERAGE_PIERRE2);
 	}
 	public static void message(int number) {
 		System.out.println(number);
